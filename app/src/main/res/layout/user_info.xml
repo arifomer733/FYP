@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/deleteProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:backgroundTint="#FF0000"
+        android:text="Delete profile"
+        android:textColor="#fff"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/userInfo"
+        app:layout_constraintTop_toBottomOf="@+id/userInfo" />
+
+    <TextView
+        android:id="@+id/userInfo"
+        android:layout_width="348dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="32dp"
+        android:padding="10dp"
+        android:textSize="20sp"
+        android:backgroundTint="@color/login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

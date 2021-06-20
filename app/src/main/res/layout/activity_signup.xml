@@ -7,11 +7,15 @@ android:layout_height="match_parent"
 android:background="@color/splashScreen"
 android:orientation="vertical"
 android:padding="20dp"
-tools:context=".Signup">
+tools:context=".signup">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="375dp"
+        android:layout_height="714dp"
         android:orientation="vertical">
 
 
@@ -33,6 +37,7 @@ tools:context=".Signup">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/antic"
             android:text="Create New Account"
             android:textSize="18sp"
             android:transitionName="logo_desc" />
@@ -56,7 +61,7 @@ tools:context=".Signup">
                 app:startIconDrawable="@drawable/pencil_icon">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/name"
+                    android:id="@+id/fullName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -66,30 +71,7 @@ tools:context=".Signup">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <com.google.android.material.textfield.TextInputLayout
-
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="UserName"
-                android:textColorHint="@color/reg_text"
-                app:boxStrokeColor="@color/black"
-                app:boxStrokeWidthFocused="2dp"
-                app:endIconMode="clear_text"
-                app:endIconTint="@color/black"
-                app:hintTextColor="@color/black"
-                app:startIconDrawable="@drawable/username_icon">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/username"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text"
-                    android:transitionName="uname_trans" />
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
+            android:orientation="vertical" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -125,6 +107,7 @@ tools:context=".Signup">
             <com.google.android.material.textfield.TextInputLayout
 
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:id="@+id/passwordIcon"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
@@ -142,8 +125,7 @@ tools:context=".Signup">
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    android:transitionName="password_trans"
-                    />
+                    android:transitionName="password_trans" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </LinearLayout>
@@ -233,22 +215,33 @@ tools:context=".Signup">
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            app:cornerRadius="10dp"
-            android:backgroundTint="#8AF66300"
+            android:backgroundTint="@color/login"
+            android:backgroundTintMode="add"
             android:text="Sign-Up"
             android:textColor="#fff"
-            android:transitionName="login_trans" />
+            android:transitionName="login_trans"
+            app:cornerRadius="10dp" />
 
         <com.google.android.material.button.MaterialButton
-        android:id="@+id/signup"
+            android:id="@+id/oldUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/splashScreen"
             android:text="Already Have an Account. LogIn"
             android:textColor="@color/white"
             android:transitionName="signup_trans"
-            app:backgroundTint="@color/transparent"
             app:cornerRadius="10dp" />
 
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible" />
+
     </LinearLayout>
+
+
+    </RelativeLayout>
 
 </LinearLayout>
