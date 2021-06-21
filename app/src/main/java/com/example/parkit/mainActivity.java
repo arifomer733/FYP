@@ -53,6 +53,8 @@ public class mainActivity extends AppCompatActivity {
 
         Log.e("oncreate","onCreate: mainscreen");
 
+        info.strslot= "free";
+
         callSignUp = findViewById( R.id.signup);
         callLogin = findViewById( R.id.Login_btn);
 

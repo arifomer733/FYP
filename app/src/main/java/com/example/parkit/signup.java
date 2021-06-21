@@ -128,8 +128,7 @@ public class signup extends AppCompatActivity {
                             dbWrite.put("CarModel",mcarModel);
                             dbWrite.put("RegistrationNumber",mregNumber);
                             dbWrite.put("Type","user");
-                            dbWrite.put("Uid", FirebaseAuth.getInstance().getCurrentUser().getUid());
-
+                            dbWrite.put("slot","free");
 
                             info.strname= mname;
                             info.stremail= memail;
@@ -138,6 +137,7 @@ public class signup extends AppCompatActivity {
                             info.strcarModel= mcarModel;
                             info.strtype= "user";
                             info.strregistration= mregNumber;
+                            info.strslot= "free";
 
                             FirebaseDatabase.getInstance().getReference("UserInfo").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).updateChildren(dbWrite).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override

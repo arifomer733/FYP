@@ -142,7 +142,7 @@ public class parkingslot extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                slot = parkingslot.getText().toString();
+                slot = parkingslot.getText().toString().trim();
 
                 Toast.makeText(getApplicationContext(),slot,Toast.LENGTH_SHORT).show();
 
@@ -150,7 +150,7 @@ public class parkingslot extends AppCompatActivity {
                 {
                     parkingslot.setError("Parking Slot cannot be empty.");
                 }
-                else if(slot.length()<2)
+                else if(slot.length()<1)
                 {
                     parkingslot.setError("Slot Should be from range given below.");
                 }

@@ -44,6 +44,7 @@ public class editprofile extends AppCompatActivity {
     FirebaseAuth fAuth;
     FirebaseUser user;
     DatabaseReference reference;
+    DatabaseReference reference1;
     String currentUser;
 
     @Override
@@ -192,10 +193,12 @@ public class editprofile extends AppCompatActivity {
 
 
                                     reference = FirebaseDatabase.getInstance().getReference("UserInfo").child(currentUser);
+                                    reference1 = FirebaseDatabase.getInstance().getReference("Slot").child(info.strslot);
+                                    reference1.setValue("free");
                                     FirebaseAuth.getInstance().signOut();
                                     reference.removeValue();
                                     user.delete();
-
+                                    info.strslot= "free";
 
                                     startActivity(new Intent(getApplicationContext(), mainActivity.class));
                                     finish();
